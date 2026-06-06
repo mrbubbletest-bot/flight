@@ -324,7 +324,7 @@ function ResultsContent() {
               <div key={comb.id} className={`glass-panel animate-fade-in ${styles.card}`}>
                 <div className={styles.cardHeader}>
                   <div>
-                    <div className={styles.price}>TWD {comb.totalPrice.toLocaleString()}</div>
+                    <div className={styles.price}>TWD {(comb.totalPrice ?? 0).toLocaleString()}</div>
                     <div className={styles.duration}>
                       總時長 Total: {formatDuration(comb.totalDurationMin)}
                     </div>

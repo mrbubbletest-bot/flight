@@ -45,6 +45,11 @@ function parseSerpApiResponse(raw: any) {
     
     if (segments.length === 0) continue;
 
+    // Skip entries without a valid price
+    const price = typeof item.price === 'number' ? item.price : 0;
+    const duration = typeof item.total_duration === 'number' ? item.total_duration : 0;
+    if (price <= 0) continue;
+
     const firstSegment = segments[0];
     const lastSegment = segments[segments.length - 1];
 
@@ -58,16 +63,16 @@ function parseSerpApiResponse(raw: any) {
       flightNo: flightNos,
       departTime: formatIsoTime(firstSegment.departure_airport?.time),
       arrivalTime: formatIsoTime(lastSegment.arrival_airport?.time),
-      durationMin: item.total_duration,
-      price: item.price,
+      durationMin: duration,
+      price: price,
       airlineLogo: firstSegment.airline_logo,
       stops: stops,
     });
 
     combinations.push({
       id: `c-${Math.random().toString(36).substr(2, 9)}`,
-      totalPrice: item.price,
-      totalDurationMin: item.total_duration,
+      totalPrice: price,
+      totalDurationMin: duration,
       legs,
     });
   }
