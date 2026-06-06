@@ -478,7 +478,7 @@ export default function Home() {
 
           <button type="submit" className={`primary-btn ${styles.submitBtn}`}>
             <Search size={22} />
-            搜尋最佳組合 Search Combinations
+            使用 {provider === 'serpapi' ? 'SerpAPI' : 'RapidAPI'} 搜尋
           </button>
         </form>
       </main>

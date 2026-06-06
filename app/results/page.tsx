@@ -213,7 +213,14 @@ function ResultsContent() {
             返回搜尋 Back
           </button>
         </div>
-        <h1 className={styles.title}>搜尋結果 Results</h1>
+        <h1 className={styles.title}>
+          搜尋結果 Results
+          {searchState && (
+            <span style={{ fontSize: '1rem', marginLeft: '12px', opacity: 0.8, fontWeight: 'normal' }}>
+              (使用 {searchState.provider === 'serpapi' ? 'SerpAPI / Google Flights' : 'RapidAPI / Skyscanner'})
+            </span>
+          )}
+        </h1>
       </header>
 
       <div className={styles.layout}>
