@@ -132,37 +132,31 @@ export default function Home() {
         <p className={styles.subtitle}>Discover the smartest flight combinations</p>
         
         {/* API Provider Switch & Quota */}
-        {quota && (
-          <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: '20px', padding: '4px' }}>
-              <button
-                type="button"
-                onClick={() => setProvider("rapidapi")}
-                style={{
-                  padding: '6px 16px', borderRadius: '16px', fontSize: '0.9rem', cursor: 'pointer', transition: 'all 0.2s',
-                  background: provider === 'rapidapi' ? 'var(--primary-color)' : 'transparent',
-                  color: 'white', border: 'none'
-                }}
-              >
-                RapidAPI
-              </button>
-              <button
-                type="button"
-                onClick={() => setProvider("serpapi")}
-                style={{
-                  padding: '6px 16px', borderRadius: '16px', fontSize: '0.9rem', cursor: 'pointer', transition: 'all 0.2s',
-                  background: provider === 'serpapi' ? 'var(--primary-color)' : 'transparent',
-                  color: 'white', border: 'none'
-                }}
-              >
-                SerpAPI
-              </button>
-            </div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              剩餘次數: RapidAPI ({quota.rapidapi}) | SerpAPI ({quota.serpapi})
-            </div>
+        <div style={{ marginTop: '20px' }}>
+          <div className={styles.tabs} style={{ justifyContent: 'center', borderBottom: 'none', paddingBottom: 0, marginBottom: '8px' }}>
+            <button
+              type="button"
+              className={`${styles.tab} ${provider === 'rapidapi' ? styles.activeTab : ''}`}
+              onClick={() => setProvider("rapidapi")}
+            >
+              🔷 RapidAPI / Skyscanner
+            </button>
+            <button
+              type="button"
+              className={`${styles.tab} ${provider === 'serpapi' ? styles.activeTab : ''}`}
+              onClick={() => setProvider("serpapi")}
+            >
+              🟢 SerpAPI / Google Flights
+            </button>
           </div>
-        )}
+          {quota && (
+            <p style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
+              {provider === 'rapidapi'
+                ? `RapidAPI 剩餘次數：${quota.rapidapi}`
+                : `SerpAPI 剩餘次數：${quota.serpapi}`}
+            </p>
+          )}
+        </div>
       </header>
 
       <main className={`glass-panel animate-fade-in ${styles.searchContainer}`}>
