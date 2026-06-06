@@ -70,6 +70,7 @@ function ResultsContent() {
         params.append('destMode', searchState.destMode);
         params.append('tripType', searchState.tripType);
         params.append('pax', searchState.passengers || '1');
+        params.append('provider', searchState.provider || 'rapidapi');
 
         if (searchState.destMode === 'single') {
           params.append('origin', searchState.origin);

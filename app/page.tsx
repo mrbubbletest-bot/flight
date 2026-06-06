@@ -24,6 +24,10 @@ export default function Home() {
   const [destMode, setDestMode] = useState<DestMode>("single");
   const [tripType, setTripType] = useState<TripType>("roundtrip");
   
+  // API Provider state
+  const [provider, setProvider] = useState<"rapidapi" | "serpapi">("rapidapi");
+  const [quota, setQuota] = useState<{ rapidapi: string, serpapi: string } | null>(null);
+  
   // Basic search state
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
@@ -37,7 +41,7 @@ export default function Home() {
   const [globalCabin, setGlobalCabin] = useState("economy");
   const [globalMaxStops, setGlobalMaxStops] = useState("any");
 
-  // Load from sessionStorage
+  // Load from sessionStorage and fetch quota
   useEffect(() => {
     const saved = sessionStorage.getItem('flightSearchState');
     if (saved) {
@@ -53,21 +57,28 @@ export default function Home() {
         if (parsed.passengers) setPassengers(parsed.passengers);
         if (parsed.globalCabin) setGlobalCabin(parsed.globalCabin);
         if (parsed.globalMaxStops) setGlobalMaxStops(parsed.globalMaxStops);
+        if (parsed.provider) setProvider(parsed.provider);
       } catch (e) {
         console.error("Failed to parse session storage", e);
       }
     }
     setIsLoaded(true);
+
+    // Fetch API Quotas
+    fetch('/api/quota')
+      .then(res => res.json())
+      .then(data => setQuota(data))
+      .catch(err => console.error("Quota fetch error", err));
   }, []);
 
   // Save to sessionStorage
   useEffect(() => {
     if (isLoaded) {
       sessionStorage.setItem('flightSearchState', JSON.stringify({
-        destMode, tripType, origin, destination, departDate, returnDate, legs, passengers, globalCabin, globalMaxStops
+        destMode, tripType, origin, destination, departDate, returnDate, legs, passengers, globalCabin, globalMaxStops, provider
       }));
     }
-  }, [destMode, tripType, origin, destination, departDate, returnDate, legs, passengers, globalCabin, globalMaxStops, isLoaded]);
+  }, [destMode, tripType, origin, destination, departDate, returnDate, legs, passengers, globalCabin, globalMaxStops, provider, isLoaded]);
 
   const handleClearData = () => {
     setDestMode("single");
@@ -107,6 +118,7 @@ export default function Home() {
       pax: passengers,
       cabin: globalCabin,
       stops: globalMaxStops,
+      provider: provider,
     });
     router.push(`/results?${query.toString()}`);
   };
@@ -118,6 +130,39 @@ export default function Home() {
       <header className={styles.header}>
         <h1 className={styles.title}>AeroHunt</h1>
         <p className={styles.subtitle}>Discover the smartest flight combinations</p>
+        
+        {/* API Provider Switch & Quota */}
+        {quota && (
+          <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: '20px', padding: '4px' }}>
+              <button
+                type="button"
+                onClick={() => setProvider("rapidapi")}
+                style={{
+                  padding: '6px 16px', borderRadius: '16px', fontSize: '0.9rem', cursor: 'pointer', transition: 'all 0.2s',
+                  background: provider === 'rapidapi' ? 'var(--primary-color)' : 'transparent',
+                  color: 'white', border: 'none'
+                }}
+              >
+                RapidAPI
+              </button>
+              <button
+                type="button"
+                onClick={() => setProvider("serpapi")}
+                style={{
+                  padding: '6px 16px', borderRadius: '16px', fontSize: '0.9rem', cursor: 'pointer', transition: 'all 0.2s',
+                  background: provider === 'serpapi' ? 'var(--primary-color)' : 'transparent',
+                  color: 'white', border: 'none'
+                }}
+              >
+                SerpAPI
+              </button>
+            </div>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+              剩餘次數: RapidAPI ({quota.rapidapi}) | SerpAPI ({quota.serpapi})
+            </div>
+          </div>
+        )}
       </header>
 
       <main className={`glass-panel animate-fade-in ${styles.searchContainer}`}>

@@ -225,7 +225,7 @@ export interface SkyscannerApiResponse {
   };
 }
 
-function extractRateLimit(res: Response) {
+export function extractRateLimit(res: Response) {
   return {
     limit: res.headers.get("x-ratelimit-requests-limit"),
     remaining: res.headers.get("x-ratelimit-requests-remaining"),
@@ -297,5 +297,5 @@ export async function healthCheck() {
     const err = await res.text();
     throw new Error(`Skyscanner health check failed: ${res.status} ${err}`);
   }
-  return await res.json();
+  return { data: await res.json(), rateLimit: extractRateLimit(res) };
 }

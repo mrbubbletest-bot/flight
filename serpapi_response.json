@@ -1,0 +1,1171 @@
+{
+  "search_metadata": {
+    "id": "6a2457f609a51a6f621e39d2",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/lRKhKY197XP-pIstN3kprg/6a2457f609a51a6f621e39d2.json",
+    "created_at": "2026-06-06 17:25:10 UTC",
+    "processed_at": "2026-06-06 17:25:10 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhoeEgoyMDI2LTA3LTAzagcIARIDVFBFcgcIARIDQktLGh4SCjIwMjYtMDctMTBqBwgBEgNCS0tyBwgBEgNUUEVAAUgBcAGYAQE&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/lRKhKY197XP-pIstN3kprg/6a2457f609a51a6f621e39d2.html",
+    "prettify_html_file": "https://serpapi.com/searches/lRKhKY197XP-pIstN3kprg/6a2457f609a51a6f621e39d2.prettify",
+    "total_time_taken": 1.2
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "zh-TW",
+    "gl": "tw",
+    "type": "1",
+    "departure_id": "TPE",
+    "arrival_id": "BKK",
+    "outbound_date": "2026-07-03",
+    "return_date": "2026-07-10",
+    "currency": "TWD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 14:05"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 16:50"
+          },
+          "duration": 225,
+          "airplane": "Boeing 777",
+          "airline": "THAI",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+          "travel_class": "Economy",
+          "flight_number": "TG 633",
+          "ticket_also_sold_by": [
+            "長榮航空"
+          ],
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 236 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 236000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 2
+      },
+      "price": 9962,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZVUnpZek14b0tDT3BORUFBYUExUlhSRGdjY0x6MkFRPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIlRHIiwiNjMzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 18:50"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 21:35"
+          },
+          "duration": 225,
+          "airplane": "Airbus A350",
+          "airline": "THAI",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+          "travel_class": "Economy",
+          "flight_number": "TG 635",
+          "ticket_also_sold_by": [
+            "長榮航空"
+          ],
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 195 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 196000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -15
+      },
+      "price": 9962,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZVUnpZek5Sb0tDT3BORUFBYUExUlhSRGdjY0x6MkFRPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIlRHIiwiNjM1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 22:40"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-04 01:25"
+          },
+          "duration": 225,
+          "airplane": "Airbus A321neo",
+          "airline": "中華航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+          "travel_class": "Economy",
+          "flight_number": "CI 837",
+          "legroom": "79 公分",
+          "extensions": [
+            "Average legroom (79 公分)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 220 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 220000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -5
+      },
+      "price": 11842,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZEU1Rnek54b0tDTUpjRUFBYUExUlhSRGdjY1Aya0FnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkNJIiwiODM3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 20:45"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 23:30"
+          },
+          "duration": 225,
+          "airplane": "Boeing 787-10",
+          "airline": "長榮航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+          "travel_class": "Economy",
+          "flight_number": "BR 205",
+          "legroom": "79 公分",
+          "extensions": [
+            "Average legroom (79 公分)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 154 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 155000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -33
+      },
+      "price": 12276,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZDVWpJd05Sb0tDUFJmRUFBYUExUlhSRGdjY055dkFnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkJSIiwiMjA1Il1dXQ=="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 13:40"
+          },
+          "arrival_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 15:35"
+          },
+          "duration": 115,
+          "airplane": "Airbus A321",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 111",
+          "legroom": "74 公分",
+          "extensions": [
+            "Below average legroom (74 公分)",
+            "Carbon emissions estimate: 86 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 16:55"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 18:55"
+          },
+          "duration": 180,
+          "airplane": "Airbus A321",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 702",
+          "legroom": "74 公分",
+          "extensions": [
+            "Below average legroom (74 公分)",
+            "Carbon emissions estimate: 147 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 80,
+          "name": "香港國際機場",
+          "id": "HKG"
+        }
+      ],
+      "total_duration": 375,
+      "carbon_emissions": {
+        "this_flight": 235000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 2
+      },
+      "price": 9303,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ3RWVHpFeE1YeFZUemN3TWhvS0NOZElFQUFhQTFSWFJEZ2NjSlhtQVE9PSIsW1siVFBFIiwiMjAyNi0wNy0wMyIsIkhLRyIsbnVsbCwiVU8iLCIxMTEiXSxbIkhLRyIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIlVPIiwiNzAyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 17:40"
+          },
+          "arrival_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 19:35"
+          },
+          "duration": 115,
+          "airplane": "Airbus A321neo",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 115",
+          "legroom": "71 公分",
+          "extensions": [
+            "Below average legroom (71 公分)",
+            "Carbon emissions estimate: 67 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 21:30"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 23:20"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 732",
+          "legroom": "71 公分",
+          "extensions": [
+            "Below average legroom (71 公分)",
+            "Carbon emissions estimate: 116 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 115,
+          "name": "香港國際機場",
+          "id": "HKG"
+        }
+      ],
+      "total_duration": 400,
+      "carbon_emissions": {
+        "this_flight": 184000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -20
+      },
+      "price": 9303,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ3RWVHpFeE5YeFZUemN6TWhvS0NOZElFQUFhQTFSWFJEZ2NjSlhtQVE9PSIsW1siVFBFIiwiMjAyNi0wNy0wMyIsIkhLRyIsbnVsbCwiVU8iLCIxMTUiXSxbIkhLRyIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIlVPIiwiNzMyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 21:25"
+          },
+          "arrival_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 23:20"
+          },
+          "duration": 115,
+          "airplane": "Airbus A321neo",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 117",
+          "legroom": "71 公分",
+          "extensions": [
+            "Below average legroom (71 公分)",
+            "Carbon emissions estimate: 67 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-04 07:25"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-04 09:25"
+          },
+          "duration": 180,
+          "airplane": "Airbus A321neo",
+          "airline": "香港快運航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+          "travel_class": "Economy",
+          "flight_number": "UO 704",
+          "legroom": "71 公分",
+          "extensions": [
+            "Below average legroom (71 公分)",
+            "Carbon emissions estimate: 116 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 485,
+          "name": "香港國際機場",
+          "id": "HKG",
+          "overnight": true
+        }
+      ],
+      "total_duration": 780,
+      "carbon_emissions": {
+        "this_flight": 184000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -20
+      },
+      "price": 9303,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UO.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ3RWVHpFeE4zeFZUemN3TkJvS0NOZElFQUFhQTFSWFJEZ2NjSlhtQVE9PSIsW1siVFBFIiwiMjAyNi0wNy0wMyIsIkhLRyIsbnVsbCwiVU8iLCIxMTciXSxbIkhLRyIsIjIwMjYtMDctMDQiLCJCS0siLG51bGwsIlVPIiwiNzA0Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 13:30"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 16:20"
+          },
+          "duration": 230,
+          "airplane": "Airbus A330",
+          "airline": "中華航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+          "travel_class": "Economy",
+          "flight_number": "CI 835",
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "Some seats with power outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 171 kg"
+          ]
+        }
+      ],
+      "total_duration": 230,
+      "carbon_emissions": {
+        "this_flight": 172000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -26
+      },
+      "price": 12528,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZEU1Rnek5Sb0tDUEJoRUFBYUExUlhSRGdjY1BxMUFnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkNJIiwiODM1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 09:25"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 12:10"
+          },
+          "duration": 225,
+          "airplane": "Airbus A330",
+          "airline": "中華航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+          "travel_class": "Economy",
+          "flight_number": "CI 831",
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 182 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 182000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -21
+      },
+      "price": 13152,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZEU1Rnek1Sb0tDT0JtRUFBYUExUlhSRGdjY0xMRkFnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkNJIiwiODMxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 07:55"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 10:40"
+          },
+          "duration": 225,
+          "airplane": "Airbus A320",
+          "airline": "THAI",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+          "travel_class": "Economy",
+          "flight_number": "TG 637",
+          "ticket_also_sold_by": [
+            "長榮航空"
+          ],
+          "legroom": "76 公分",
+          "extensions": [
+            "Average legroom (76 公分)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 253 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 253000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 10
+      },
+      "price": 13172,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZVUnpZek54b0tDUFJtRUFBYUExUlhSRGdjY1BIRkFnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIlRHIiwiNjM3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 19:15"
+          },
+          "arrival_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 21:10"
+          },
+          "duration": 115,
+          "airplane": "Boeing 777",
+          "airline": "國泰航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+          "travel_class": "Economy",
+          "flight_number": "CX 565",
+          "legroom": "79 公分",
+          "extensions": [
+            "Average legroom (79 公分)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 75 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "香港國際機場",
+            "id": "HKG",
+            "time": "2026-07-03 22:15"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-04 00:10"
+          },
+          "duration": 175,
+          "airplane": "Airbus A330",
+          "airline": "國泰航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+          "travel_class": "Economy",
+          "flight_number": "CX 617",
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 135 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 65,
+          "name": "香港國際機場",
+          "id": "HKG"
+        }
+      ],
+      "total_duration": 355,
+      "carbon_emissions": {
+        "this_flight": 211000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -9
+      },
+      "price": 13871,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ3REV0RVMk5YeERXRFl4TnhvS0NLOXNFQUFhQTFSWFJEZ2NjSmZYQWc9PSIsW1siVFBFIiwiMjAyNi0wNy0wMyIsIkhLRyIsbnVsbCwiQ1giLCI1NjUiXSxbIkhLRyIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkNYIiwiNjE3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 21:50"
+          },
+          "arrival_airport": {
+            "name": "尼諾伊·阿基諾國際機場",
+            "id": "MNL",
+            "time": "2026-07-04 00:05"
+          },
+          "duration": 135,
+          "airplane": "Airbus A321",
+          "airline": "菲律賓航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/PR.png",
+          "travel_class": "Economy",
+          "flight_number": "PR 895",
+          "legroom": "76 公分",
+          "extensions": [
+            "Average legroom (76 公分)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 128 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "尼諾伊·阿基諾國際機場",
+            "id": "MNL",
+            "time": "2026-07-04 09:40"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-04 12:10"
+          },
+          "duration": 210,
+          "airplane": "Boeing 777",
+          "airline": "菲律賓航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/PR.png",
+          "travel_class": "Economy",
+          "flight_number": "PR 730",
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 167 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 575,
+          "name": "尼諾伊·阿基諾國際機場",
+          "id": "MNL",
+          "overnight": true
+        }
+      ],
+      "total_duration": 920,
+      "carbon_emissions": {
+        "this_flight": 296000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 28
+      },
+      "price": 15208,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/PR.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ3RRVWpnNU5YeFFVamN6TUJvS0NPaDJFQUFhQTFSWFJEZ2NjS0g0QWc9PSIsW1siVFBFIiwiMjAyNi0wNy0wMyIsIk1OTCIsbnVsbCwiUFIiLCI4OTUiXSxbIk1OTCIsIjIwMjYtMDctMDQiLCJCS0siLG51bGwsIlBSIiwiNzMwIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 07:00"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 09:45"
+          },
+          "duration": 225,
+          "airplane": "Airbus A330",
+          "airline": "中華航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+          "travel_class": "Economy",
+          "flight_number": "CI 833",
+          "legroom": "81 公分",
+          "extensions": [
+            "Above average legroom (81 公分)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 182 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 182000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -21
+      },
+      "price": 15336,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CI.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZEU1Rnek14b0tDT2gzRUFBYUExUlhSRGdjY0xiN0FnPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkNJIiwiODMzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 09:00"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 12:00"
+          },
+          "duration": 240,
+          "airplane": "Airbus A350",
+          "airline": "星宇航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/JX.png",
+          "travel_class": "Economy",
+          "flight_number": "JX 741",
+          "legroom": "79 公分",
+          "extensions": [
+            "Average legroom (79 公分)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 188 kg"
+          ]
+        }
+      ],
+      "total_duration": 240,
+      "carbon_emissions": {
+        "this_flight": 188000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -19
+      },
+      "price": 18007,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/JX.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZLV0RjME1Sb0xDTmVNQVJBQUdnTlVWMFE0SEhEQnZRTT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkpYIiwiNzQxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 13:55"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 16:40"
+          },
+          "duration": 225,
+          "airplane": "Airbus A330-900neo",
+          "airline": "星宇航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/JX.png",
+          "travel_class": "Economy",
+          "flight_number": "JX 745",
+          "legroom": "79 公分",
+          "extensions": [
+            "Average legroom (79 公分)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 185 kg"
+          ]
+        }
+      ],
+      "total_duration": 225,
+      "carbon_emissions": {
+        "this_flight": 186000,
+        "typical_for_this_route": 231000,
+        "difference_percent": -19
+      },
+      "price": 18007,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/JX.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZLV0RjME5Sb0xDTmVNQVJBQUdnTlVWMFE0SEhEQnZRTT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkpYIiwiNzQ1Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 08:20"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 11:10"
+          },
+          "duration": 230,
+          "airplane": "Boeing 777",
+          "airline": "長榮航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+          "travel_class": "Premium Economy",
+          "flight_number": "BR 211",
+          "extensions": [
+            "Extra reclining seat",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 337 kg"
+          ]
+        }
+      ],
+      "total_duration": 230,
+      "carbon_emissions": {
+        "this_flight": 338000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 46
+      },
+      "price": 19274,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1ZDVWpJeE1Sb0xDTXFXQVJBQUdnTlVWMFE0SEhEdDNBTT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkJSIiwiMjExIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "臺灣桃園國際機場",
+            "id": "TPE",
+            "time": "2026-07-03 08:15"
+          },
+          "arrival_airport": {
+            "name": "素萬那普機場",
+            "id": "BKK",
+            "time": "2026-07-03 11:20"
+          },
+          "duration": 245,
+          "airplane": "Boeing 777",
+          "airline": "長榮航空",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+          "travel_class": "Premium Economy",
+          "flight_number": "BR 67",
+          "extensions": [
+            "Extra reclining seat",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 317 kg"
+          ]
+        }
+      ],
+      "total_duration": 245,
+      "carbon_emissions": {
+        "this_flight": 318000,
+        "typical_for_this_route": 231000,
+        "difference_percent": 38
+      },
+      "price": 22440,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BR.png",
+      "departure_token": "WyJDalJJTkV4MmQxRktjR1ZvVkhkQlNYbDRjbmRDUnkwdExTMHRMUzB0TFhaM2RtOHlNVUZCUVVGQlIyOXJWbDlaVEZCVmNuRkJFZ1JDVWpZM0dnc0lxSzhCRUFBYUExUlhSRGdjY0plckJBPT0iLFtbIlRQRSIsIjIwMjYtMDctMDMiLCJCS0siLG51bGwsIkJSIiwiNjciXV1d"
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 9303,
+    "price_level": "typical",
+    "typical_price_range": [
+      5300,
+      11000
+    ],
+    "price_history": [
+      [
+        1775491200,
+        11379
+      ],
+      [
+        1775577600,
+        11631
+      ],
+      [
+        1775664000,
+        11678
+      ],
+      [
+        1775750400,
+        11670
+      ],
+      [
+        1775836800,
+        11682
+      ],
+      [
+        1775923200,
+        11522
+      ],
+      [
+        1776009600,
+        11695
+      ],
+      [
+        1776096000,
+        11707
+      ],
+      [
+        1776182400,
+        12148
+      ],
+      [
+        1776268800,
+        12223
+      ],
+      [
+        1776355200,
+        12223
+      ],
+      [
+        1776441600,
+        12215
+      ],
+      [
+        1776528000,
+        12253
+      ],
+      [
+        1776614400,
+        12253
+      ],
+      [
+        1776700800,
+        12253
+      ],
+      [
+        1776787200,
+        12253
+      ],
+      [
+        1776873600,
+        12253
+      ],
+      [
+        1776960000,
+        12253
+      ],
+      [
+        1777046400,
+        12253
+      ],
+      [
+        1777132800,
+        12253
+      ],
+      [
+        1777219200,
+        12253
+      ],
+      [
+        1777305600,
+        12253
+      ],
+      [
+        1777392000,
+        12253
+      ],
+      [
+        1777478400,
+        12253
+      ],
+      [
+        1777564800,
+        12227
+      ],
+      [
+        1777651200,
+        12227
+      ],
+      [
+        1777737600,
+        12180
+      ],
+      [
+        1777824000,
+        10554
+      ],
+      [
+        1777910400,
+        10542
+      ],
+      [
+        1777996800,
+        11153
+      ],
+      [
+        1778083200,
+        10813
+      ],
+      [
+        1778169600,
+        10822
+      ],
+      [
+        1778256000,
+        10821
+      ],
+      [
+        1778342400,
+        10864
+      ],
+      [
+        1778428800,
+        10844
+      ],
+      [
+        1778515200,
+        10570
+      ],
+      [
+        1778601600,
+        10572
+      ],
+      [
+        1778688000,
+        11335
+      ],
+      [
+        1778774400,
+        11324
+      ],
+      [
+        1778860800,
+        11322
+      ],
+      [
+        1778947200,
+        11623
+      ],
+      [
+        1779033600,
+        11331
+      ],
+      [
+        1779120000,
+        11331
+      ],
+      [
+        1779206400,
+        11008
+      ],
+      [
+        1779292800,
+        11004
+      ],
+      [
+        1779379200,
+        11003
+      ],
+      [
+        1779465600,
+        11331
+      ],
+      [
+        1779552000,
+        10841
+      ],
+      [
+        1779638400,
+        10841
+      ],
+      [
+        1779724800,
+        9931
+      ],
+      [
+        1779811200,
+        9926
+      ],
+      [
+        1779897600,
+        9923
+      ],
+      [
+        1779984000,
+        8930
+      ],
+      [
+        1780070400,
+        8934
+      ],
+      [
+        1780156800,
+        8938
+      ],
+      [
+        1780243200,
+        8051
+      ],
+      [
+        1780329600,
+        8918
+      ],
+      [
+        1780416000,
+        8918
+      ],
+      [
+        1780502400,
+        9004
+      ],
+      [
+        1780588800,
+        9290
+      ],
+      [
+        1780675200,
+        9291
+      ],
+      [
+        1780761600,
+        9303
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "TPE",
+            "name": "臺灣桃園國際機場"
+          },
+          "city": "臺北市",
+          "country": "台灣",
+          "country_code": "TW",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS2MmLbW-HcXlTwmod5sPj7skSX-bye9dnRXjaDxShX4zk8o66Ef213qGriwZt3zahLCL9v7wFHklhKEg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQMST5lzBTm3sd5w5tOO4YZFWdFgSntIVWqaCH97zNh9_Lx42rE-SexpiflhCSwJtBjNpUWo4f_uIhEu4ul5r4B5UgJCxOuDlKIRPgULbo"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "BKK",
+            "name": "素萬那普機場"
+          },
+          "city": "曼谷",
+          "country": "泰國",
+          "country_code": "TH",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzC4xB5QxGqhLwOS5u7E8q-Ty8lX8lihfxKD-L1VCamrWDhR52VWvoBnPWydRUr7FEKiKwHfAU0sB9mg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-yAxs8ZWNi0M14W-4wO0ra1auEIiVtG0zy-C8CygMmIa2-MVy7L8vSTHNXJJnS_9lq_gL3BVaF6MQh6wBKzXzqexb7CZL29F6UQABXAY"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "BKK",
+            "name": "素萬那普機場"
+          },
+          "city": "曼谷",
+          "country": "泰國",
+          "country_code": "TH",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzC4xB5QxGqhLwOS5u7E8q-Ty8lX8lihfxKD-L1VCamrWDhR52VWvoBnPWydRUr7FEKiKwHfAU0sB9mg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-yAxs8ZWNi0M14W-4wO0ra1auEIiVtG0zy-C8CygMmIa2-MVy7L8vSTHNXJJnS_9lq_gL3BVaF6MQh6wBKzXzqexb7CZL29F6UQABXAY"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "TPE",
+            "name": "臺灣桃園國際機場"
+          },
+          "city": "臺北市",
+          "country": "台灣",
+          "country_code": "TW",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS2MmLbW-HcXlTwmod5sPj7skSX-bye9dnRXjaDxShX4zk8o66Ef213qGriwZt3zahLCL9v7wFHklhKEg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQMST5lzBTm3sd5w5tOO4YZFWdFgSntIVWqaCH97zNh9_Lx42rE-SexpiflhCSwJtBjNpUWo4f_uIhEu4ul5r4B5UgJCxOuDlKIRPgULbo"
+        }
+      ]
+    }
+  ]
+}

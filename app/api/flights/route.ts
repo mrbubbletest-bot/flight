@@ -7,6 +7,7 @@ import {
   expandLocation,
   delay,
 } from '@/lib/flightApi';
+import { searchOneWaySerp, searchRoundTripSerp } from '@/lib/serpApi';
 
 // --- Shared types for the frontend ---
 interface ParsedLeg {
@@ -120,8 +121,9 @@ export async function GET(request: Request) {
     const destMode = searchParams.get('destMode') || 'single';
     const tripType = searchParams.get('tripType') || 'roundtrip';
     const pax = parseInt(searchParams.get('pax') || '1');
+    const provider = searchParams.get('provider') || 'rapidapi';
 
-    console.log(`[API] /api/flights  mode=${destMode}  trip=${tripType}  pax=${pax}`);
+    console.log(`[API] /api/flights  mode=${destMode}  trip=${tripType}  pax=${pax} provider=${provider}`);
 
     // =========================================================
     // Single Destination
@@ -161,16 +163,23 @@ export async function GET(request: Request) {
           for (const d of destinations) {
             if (results.length > 0) await delay(1000);
             try {
-              const res = await searchOneWay({
-                origin: o,
-                destination: d,
-                date: departDate,
-                adults: pax,
-                cabin: skyCabin,
-                limit: 50,
-                currency: 'TWD',
-              });
-              results.push({ combs: parseSkyscannerResponse(res.data), rl: res.rateLimit });
+              let resCombs: Combination[] = [];
+              let rl = null;
+              if (provider === 'serpapi') {
+                const res = await searchOneWaySerp({
+                  origin: o, destination: d, date: departDate,
+                  adults: pax, cabin: skyCabin, limit: 50, currency: 'TWD'
+                });
+                resCombs = res.combinations;
+              } else {
+                const res = await searchOneWay({
+                  origin: o, destination: d, date: departDate,
+                  adults: pax, cabin: skyCabin, limit: 50, currency: 'TWD'
+                });
+                resCombs = parseSkyscannerResponse(res.data);
+                rl = res.rateLimit;
+              }
+              results.push({ combs: resCombs, rl });
             } catch (err: any) {
               console.error(`Search ${o}→${d} failed:`, err.message);
               results.push({ combs: [], rl: null });
@@ -192,17 +201,25 @@ export async function GET(request: Request) {
           for (const d of destinations) {
             if (results.length > 0) await delay(1000);
             try {
-              const res = await searchRoundTrip({
-                origin: o,
-                destination: d,
-                date: departDate,
-                return_date: returnDate || addDaysToDate(departDate, 7),
-                adults: pax,
-                cabin: skyCabin,
-                limit: 50,
-                currency: 'TWD',
-              });
-              results.push({ combs: parseSkyscannerResponse(res.data), rl: res.rateLimit });
+              let resCombs: Combination[] = [];
+              let rl = null;
+              if (provider === 'serpapi') {
+                const res = await searchRoundTripSerp({
+                  origin: o, destination: d, date: departDate,
+                  return_date: returnDate || addDaysToDate(departDate, 7),
+                  adults: pax, cabin: skyCabin, limit: 50, currency: 'TWD'
+                });
+                resCombs = res.combinations;
+              } else {
+                const res = await searchRoundTrip({
+                  origin: o, destination: d, date: departDate,
+                  return_date: returnDate || addDaysToDate(departDate, 7),
+                  adults: pax, cabin: skyCabin, limit: 50, currency: 'TWD'
+                });
+                resCombs = parseSkyscannerResponse(res.data);
+                rl = res.rateLimit;
+              }
+              results.push({ combs: resCombs, rl });
             } catch (err: any) {
               console.error(`RT search ${o}→${d} failed:`, err.message);
               results.push({ combs: [], rl: null });
@@ -271,32 +288,40 @@ export async function GET(request: Request) {
       
       if (i > 0) await delay(1000);
       try {
-        let res;
-        if (tripType === 'roundtrip') {
-          res = await searchRoundTrip({
-            origin: originCode,
-            destination: destCode,
-            date: outDates[i],
-            return_date: retDates[i],
-            adults: pax,
-            cabin: CABIN_MAP[leg.cabin] || 'economy',
-            limit: 50,
-            currency: 'TWD',
-          });
+        let resCombs: Combination[] = [];
+        if (provider === 'serpapi') {
+          if (tripType === 'roundtrip') {
+            const res = await searchRoundTripSerp({
+              origin: originCode, destination: destCode,
+              date: outDates[i], return_date: retDates[i],
+              adults: pax, cabin: leg.cabin, limit: 50, currency: 'TWD'
+            });
+            resCombs = res.combinations;
+          } else {
+            const res = await searchOneWaySerp({
+              origin: originCode, destination: destCode,
+              date: outDates[i], adults: pax, cabin: leg.cabin, limit: 50, currency: 'TWD'
+            });
+            resCombs = res.combinations;
+          }
         } else {
-          res = await searchOneWay({
-            origin: originCode,
-            destination: destCode,
-            date: outDates[i],
-            adults: pax,
-            cabin: CABIN_MAP[leg.cabin] || 'economy',
-            limit: 50,
-            currency: 'TWD',
-          });
+          let res;
+          if (tripType === 'roundtrip') {
+            res = await searchRoundTrip({
+              origin: originCode, destination: destCode,
+              date: outDates[i], return_date: retDates[i],
+              adults: pax, cabin: CABIN_MAP[leg.cabin] || 'economy', limit: 50, currency: 'TWD'
+            });
+          } else {
+            res = await searchOneWay({
+              origin: originCode, destination: destCode,
+              date: outDates[i], adults: pax, cabin: CABIN_MAP[leg.cabin] || 'economy', limit: 50, currency: 'TWD'
+            });
+          }
+          resCombs = parseSkyscannerResponse(res.data);
+          lastRl = res.rateLimit;
         }
-        ticketResults.push(parseSkyscannerResponse(res.data));
-
-        // Apply per-leg maxStops filter
+        ticketResults.push(resCombs);
         const legMaxStops = leg.maxStops !== undefined && leg.maxStops !== 'any' ? parseInt(leg.maxStops) : null;
         if (legMaxStops !== null && !isNaN(legMaxStops)) {
           const lastIdx = ticketResults.length - 1;
@@ -305,7 +330,7 @@ export async function GET(request: Request) {
           );
         }
 
-        lastRl = res.rateLimit;
+
       } catch (err: any) {
         console.error(`Multi leg ${i} search failed:`, err.message);
         ticketResults.push([]);
