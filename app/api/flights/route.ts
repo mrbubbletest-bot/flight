@@ -259,9 +259,23 @@ export async function GET(request: Request) {
       const stay = parseInt(inputLegs[i - 1].maxDays) || 0;
       outDates.push(addDaysToDate(outDates[i - 1], Math.max(1, stay)));
     }
-    // Multi-city: always search ONE-WAY per leg
-    // (user already defines the complete itinerary including any return legs)
-    console.log('[Multi] Out dates:', outDates);
+
+    const retDates = [];
+    if (tripType === 'roundtrip') {
+      const lastStay = parseInt(inputLegs[inputLegs.length - 1].maxDays) || 7;
+      let currentRetDate = addDaysToDate(outDates[outDates.length - 1], Math.max(1, lastStay));
+      
+      // Calculate return dates in reverse order
+      const revRetDates = [currentRetDate];
+      for (let i = inputLegs.length - 2; i >= 0; i--) {
+        const stay = parseInt(inputLegs[i].maxDays) || 0;
+        currentRetDate = addDaysToDate(currentRetDate, Math.max(1, stay));
+        revRetDates.push(currentRetDate);
+      }
+      retDates.push(...revRetDates.reverse());
+    }
+
+    console.log('[Multi] Out dates:', outDates, 'Ret dates:', retDates);
 
     // Fetch tickets for each input leg (always one-way)
     const ticketResults: Combination[][] = [];
@@ -276,16 +290,34 @@ export async function GET(request: Request) {
       try {
         let resCombs: Combination[] = [];
         if (provider === 'serpapi') {
-          const res = await searchOneWaySerp({
-            origin: originCode, destination: destCode,
-            date: outDates[i], adults: pax, cabin: leg.cabin, limit: 50, currency: 'TWD'
-          });
-          resCombs = res.combinations;
+          if (tripType === 'roundtrip') {
+            const res = await searchRoundTripSerp({
+              origin: originCode, destination: destCode,
+              date: outDates[i], return_date: retDates[i],
+              adults: pax, cabin: leg.cabin, limit: 50, currency: 'TWD'
+            });
+            resCombs = res.combinations;
+          } else {
+            const res = await searchOneWaySerp({
+              origin: originCode, destination: destCode,
+              date: outDates[i], adults: pax, cabin: leg.cabin, limit: 50, currency: 'TWD'
+            });
+            resCombs = res.combinations;
+          }
         } else {
-          const res = await searchOneWay({
-            origin: originCode, destination: destCode,
-            date: outDates[i], adults: pax, cabin: CABIN_MAP[leg.cabin] || 'economy', limit: 50, currency: 'TWD'
-          });
+          let res;
+          if (tripType === 'roundtrip') {
+            res = await searchRoundTrip({
+              origin: originCode, destination: destCode,
+              date: outDates[i], return_date: retDates[i],
+              adults: pax, cabin: CABIN_MAP[leg.cabin] || 'economy', limit: 50, currency: 'TWD'
+            });
+          } else {
+            res = await searchOneWay({
+              origin: originCode, destination: destCode,
+              date: outDates[i], adults: pax, cabin: CABIN_MAP[leg.cabin] || 'economy', limit: 50, currency: 'TWD'
+            });
+          }
           resCombs = parseSkyscannerResponse(res.data);
           lastRl = res.rateLimit;
         }
@@ -334,12 +366,21 @@ export async function GET(request: Request) {
       let totalDurationMin = 0;
       const chronologicalLegs: ParsedLeg[] = [];
 
-      // Each ticket contributes one leg (one-way)
+      // Add all outbound legs in order
       for (let i = 0; i < tickets.length; i++) {
         totalPrice += tickets[i].totalPrice;
         totalDurationMin += tickets[i].totalDurationMin;
         if (tickets[i].legs.length > 0) {
           chronologicalLegs.push(tickets[i].legs[0]);
+        }
+      }
+
+      // Add all return legs in reverse order
+      if (tripType === 'roundtrip') {
+        for (let i = tickets.length - 1; i >= 0; i--) {
+          if (tickets[i].legs.length > 1) {
+            chronologicalLegs.push(tickets[i].legs[1]);
+          }
         }
       }
 
