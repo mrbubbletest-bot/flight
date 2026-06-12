@@ -150,9 +150,9 @@ export function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// --- RapidAPI configuration ---
 const SKYSCANNER_RAPIDAPI_HOST = 'skyscanner-flights4.p.rapidapi.com';
-const SKYSCANNER_RAPIDAPI_KEY = '3b254fe3f8msh8a3f8f9644a62e3p18ebb3jsn02bf856339f6';
+const SKYSCANNER_RAPIDAPI_KEY = process.env.RAPIDAPI_KEY || '3b254fe3f8msh8a3f8f9644a62e3p18ebb3jsn02bf856339f6';
+
 
 function rapidHeaders(): Record<string, string> {
   return {
