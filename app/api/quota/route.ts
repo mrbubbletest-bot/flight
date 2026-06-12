@@ -7,7 +7,7 @@ export async function GET() {
 
   try {
     const res = await healthCheck();
-    if (res.rateLimit && res.rateLimit.remaining) {
+    if (res.rateLimit && res.rateLimit.remaining !== null && res.rateLimit.remaining !== undefined) {
       rapidApiQuota = res.rateLimit.remaining;
     }
   } catch (err) {

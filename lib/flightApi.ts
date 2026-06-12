@@ -293,9 +293,13 @@ export async function searchMultiCity(body: SkyscannerMultiCityParams): Promise<
 export async function healthCheck() {
   const url = `https://${SKYSCANNER_RAPIDAPI_HOST}/health`;
   const res = await fetch(url, { method: 'GET', headers: rapidHeaders() });
+  const rateLimit = extractRateLimit(res);
   if (!res.ok) {
+    if (res.status === 429) {
+      return { data: null, rateLimit };
+    }
     const err = await res.text();
     throw new Error(`Skyscanner health check failed: ${res.status} ${err}`);
   }
-  return { data: await res.json(), rateLimit: extractRateLimit(res) };
+  return { data: await res.json(), rateLimit };
 }
