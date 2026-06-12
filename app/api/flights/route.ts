@@ -337,7 +337,8 @@ export async function GET(request: Request) {
       }
     }
 
-    // Cartesian combination of all tickets
+    // Cartesian combination of all tickets (with cap to prevent OOM)
+    const MAX_INTERMEDIATE = 5000;
     let combinedTickets: Combination[][] = ticketResults[0].map(t => [t]);
     
     for (let i = 1; i < ticketResults.length; i++) {
@@ -345,9 +346,17 @@ export async function GET(request: Request) {
       for (const existing of combinedTickets) {
         for (const newTicket of ticketResults[i]) {
           nextCombined.push([...existing, newTicket]);
+          if (nextCombined.length >= MAX_INTERMEDIATE) break;
         }
+        if (nextCombined.length >= MAX_INTERMEDIATE) break;
       }
-      combinedTickets = nextCombined;
+      // Sort by total price and keep only top results
+      nextCombined.sort((a, b) => {
+        const priceA = a.reduce((s, t) => s + t.totalPrice, 0);
+        const priceB = b.reduce((s, t) => s + t.totalPrice, 0);
+        return priceA - priceB;
+      });
+      combinedTickets = nextCombined.slice(0, MAX_INTERMEDIATE);
     }
 
     // Reassemble legs chronologically, validate connection times, and sum prices

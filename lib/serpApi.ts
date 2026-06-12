@@ -133,9 +133,17 @@ export async function searchRoundTripSerp(params: SerpApiRoundTripParams) {
     })
   ]);
 
+  // Limit each side to top 20 by price to prevent memory explosion
+  const topOut = outboundRes.combinations
+    .sort((a: any, b: any) => a.totalPrice - b.totalPrice)
+    .slice(0, 20);
+  const topRet = returnRes.combinations
+    .sort((a: any, b: any) => a.totalPrice - b.totalPrice)
+    .slice(0, 20);
+
   const combined = [];
-  for (const outComb of outboundRes.combinations) {
-    for (const retComb of returnRes.combinations) {
+  for (const outComb of topOut) {
+    for (const retComb of topRet) {
       combined.push({
         id: `c-${Math.random().toString(36).substr(2, 9)}`,
         totalPrice: outComb.totalPrice + retComb.totalPrice,
@@ -145,8 +153,8 @@ export async function searchRoundTripSerp(params: SerpApiRoundTripParams) {
     }
   }
 
-  // Sort by price
+  // Sort by price and cap at 50
   combined.sort((a, b) => a.totalPrice - b.totalPrice);
 
-  return { combinations: combined };
+  return { combinations: combined.slice(0, 50) };
 }
